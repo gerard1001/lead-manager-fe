@@ -127,6 +127,9 @@ export default function Home() {
   return (
     <div className="sm:text-lg text-base">
       <main className="w-full max-w-[900px] xl:w-8/12 mb-12 xl:mb-0 px-4 mx-auto mt-24">
+        <h1 className="text-2xl font-semibold text-emerald-500 mb-4 uppercase text-center">
+          Simple Lead Manager
+        </h1>
         <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
           <div className="rounded-t mb-0 px-4 py-3 border-0">
             <div className="flex flex-wrap items-center">
