@@ -5,24 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import Joi from "joi";
 import { joiResolver } from "@hookform/resolvers/joi";
-
-export enum ELeadStatus {
-  New = "New",
-  Engaged = "Engaged",
-  ProposalSent = "Proposal Sent",
-  ClosedWon = "Closed-Won",
-  ClosedLost = "Closed-Lost",
-}
-
-export type TLeadFormInputs = {
-  name: string;
-  email: string;
-  status: ELeadStatus;
-};
-
-export type ILead = TLeadFormInputs & {
-  _id: string;
-};
+import { ELeadStatus, ILead, TLeadFormInputs } from "@/types";
 
 const schema = Joi.object({
   name: Joi.string().max(20).required().messages({
@@ -65,8 +48,12 @@ export default function Home() {
       const res = await fetch(`${serverUrl}/leads`);
       const data = await res.json();
       setLeads(data);
-    } catch (error: any) {
-      setError(error.message as string);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setError(error.message);
+      } else {
+        setError("An unexpected error occurred");
+      }
     } finally {
       setFetching(false);
     }
