@@ -2,23 +2,36 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+First, clone the repository:
 
 ```bash
+git clone https://github.com/gerard1001/lead-manager-fe.git
+cd lead-manager-fe
+```
+
+Next, set the environment variable `NEXT_PUBLIC_SERVER_URL` in your `.env` file:
+
+```
+NEXT_PUBLIC_SERVER_URL=<your_server_url>
+```
+
+Then, install the dependencies and run the development server:
+
+```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Roboto](https://fonts.google.com/specimen/Roboto), a popular font family by Google.
+
+## Features
+
+- Simple listing display of leads using a table
+- Form to add a new lead (name, email, and status)
 
 ## Learn More
 
